@@ -2,14 +2,10 @@
 
 ## 웹
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/204b3b73-e93b-4731-b7f2-1e8f9f4522bb/Untitled.png)
-
 - HTTP 기반으로 통신. 모든것이 HTTP!
 - 클라이언트에서 서버로 데이터를 전송할 때, 서버에서 클라이언트로 데이터를 응답할 때, 서버간 데이터 통신 등 모두 HTTP 프로토콜을 기반으로 동작
 
 ## 웹 서버 (Web Server)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/c98e2bf2-c641-4c84-abc7-96e8ea408063/Untitled.png)
 
 - HTTP 기반으로 동작
 - 정적 리소스 제공(html,css,js,이미지,같은 정적 데이터를 그냥 던져줌), 기타 부가기능
@@ -17,8 +13,6 @@
 - 예) NGINX, APACHE
 
 ## 웹 애플리케이션 서버 (WAS)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/9e809c3a-1896-4f99-a768-d248049a0aec/Untitled.png)
 
 - HTTP 기반으로 동작
 - 웹 서버 기능 포함+ (정적 리소스 제공 가능)
@@ -42,12 +36,8 @@
 
 ## 웹 시스템 구성 - WAS, DB
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/448ca2c9-b16b-4cf2-91a2-2af64d7d4aa3/Untitled.png)
-
 - WAS, DB 만으로 최소한의 시스템 구성 가능
 - WAS는 정적 리소스, 애플리케이션 로직 모두 제공 가능
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/ba17f1fd-c918-4a56-b20f-3df32115567b/Untitled.png)
 
 - WAS 하나만 가지고 운영시 ⇒ WAS가 너무 많은 역할을 담당, 서버 과부하 우려
 - 가장 비싼 애플리케이션 로직이 정적 리소스 때문에 수행이 어려울 수 있음
@@ -55,21 +45,16 @@
 - WAS 장애시 접근조차 불가. 오류 화면조차도 노출 불가능
 - 큰 시스템을 구축하기에는 부담이 있음
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/c5514f1c-3c91-401d-a2fe-ef5a334e0675/Untitled.png)
-
 - 가장 일반적인 방식
 - 웹 서버를 앞에 두고 정적 리소스(html,css..)는 웹 서버가 처리
     - 업무 분담하여 부담 줄이기
 - 웹 서버는 애플리케이션 로직같은 동적인 처리가 필요하면 WAS에 요청을 위임
 - 장점) WAS는 중요한 애플리케이션 로직 처리 전
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/56f53339-8367-481e-ae82-7b172c248a57/Untitled.png)
-
 - 효율적인 리소스 관리
     - 정적 리소스가 많이 사용되면 Web 서버 증설
     - 애플리케이션 리소스가 많이 사용되면 WAS 증설
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/9c872c61-d42b-4828-935b-390986b7ac5f/Untitled.png)
 
 - 정적 리소스만 제공하는 웹 서버는 잘 죽지 않음 (복잡한 과정이 거의 없음)
 - 애플리케이션 로직이 동작하는 WAS 서버는 잘 죽음
@@ -84,8 +69,6 @@
 
 ### POST 전송 - 저장
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/60153377-8c0e-48e9-ac0a-84729e1a37bf/Untitled.png)
-
 - 회원가입 form
 - html을 POST로 저장하기 위해 클라이언트가 POST로 서버에 전송 ⇒ 웹 브라우저가 요청 HTTP 메세지를 생성
 - 데이터, 컨텐츠 타입(내용) 등의 정보가 있음
@@ -93,8 +76,6 @@
 ## 서버에서 처리해야 하는 업무
 
 ### 웹 애플리케이션 서버 직접 구현
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/0010b036-b903-4486-ba00-404e25970693/Untitled.png)
 
 만약 웹 애플리케이션 서버(WAS)를 직접 구현해야 하면, 다음 프로세스를 거치도록 코드를 직접 작성해야 함
 
@@ -114,8 +95,6 @@
 → 서블릿의 등장. (
 
 ### 서블릿을 지원하는 WAS 사용
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/2e1b3199-7439-497b-a62d-cd3fe1f92d40/Untitled.png)
 
 - 서블릿은 의미있는 비즈니스 로직(초록 상자)를 제외한 모든 일들을 지원해준다! 다 자동화
 
@@ -139,9 +118,8 @@ public class HelloServlet extends HttpServlet {
 - HTTP 응답 정보를 편리하게 제공할 수 있는 HttpServletResponse ⇒ HTTP 응답 메세지를 생성하는 등의 편의 기능 제공.
 - 개발자는 HTTP 스펙을 매우 편리하게 사용 ⇒ 기본적인 **HTTP 스펙을 어느 정도는 알아야 함..!**
     - Req, Res를 직접 파싱하려했다면 어려웠을 것
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/719b4588-776d-40bb-957a-43c242e85510/Untitled.png)
-
+ 
+  
 ### HTTP 요청, 응답 흐름
 
 - HTTP 요청시
@@ -151,8 +129,6 @@ public class HelloServlet extends HttpServlet {
     - WAS는 Response 객체에 담겨있는 내용으로 HTTP 응답 정보를 생성→ 웹 브라우저에 전달
 
 ### 서블릿 컨테이너
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/8f67ec6f-3c33-4e00-8235-3ddc520f0c64/Untitled.png)
 
 - 톰캣처럼 서블릿을 지원하는 WAS를 서블릿 컨테이너라고 함
 - 개발자가 서블릿 컨테이너를 직접 생성하지 않아도 서블릿을 지원하는 WAS를 사용시
@@ -171,8 +147,6 @@ public class HelloServlet extends HttpServlet {
 
 # [3] 동시 요청 - 멀티 쓰레드
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/26cd31bb-9f5b-4a07-8e38-4fe777b48b69/Untitled.png)
-
 ## 쓰레드
 
 - 애플리케이션 코드를 하나하나 순차적으로 실행하는 것은 쓰레드
@@ -183,42 +157,36 @@ public class HelloServlet extends HttpServlet {
 
 ## 단일 요청 - 쓰레드 하나 사용
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/0b0dc095-ab1f-4ae1-bdd7-3a35ddbb4893/Untitled.png)
-
 - WAS내에 쓰레드가 1개만 있다고 가정
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/39cd92d6-6eba-447b-8a96-027a30c7e9cb/Untitled.png)
 
 - 쓰레드 연결 및 서블릿 호출
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/54c74b32-3387-4e42-8a73-f4ce02c404cf/Untitled.png)
 
 - 서블릿 응답
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/bc20d19b-9ef2-4d62-8522-d2434ad757d7/Untitled.png)
+
 
 - 응답을 수행한 뒤 쓰레드는 휴식
 
 ## 다중 요청 - 쓰레드 하나 사용
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/50f27806-985a-47b2-8991-8c43ab9d43b4/Untitled.png)
+
 
 - 쓰레드는 하나인데 요청이 여러개 들어오는 경우, 먼저 들어온 요청을 처리하기 위해 하나 있는 쓰레드가 할당되어 서블릿 코드를 실행
 - 1번 요청 처리가 잘 수행되면, 순차적으로 2번 요청에 대한 응답이 수행하면 됨
 - BUT, 1번 요청을 처리하는 과정에서 서블릿 코드 내부의 이유로 지연 발생
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/4654acb9-1714-4fe3-a4f8-fd90d740eaaf/Untitled.png)
 
 - 지연 발생 중에 2번 요청이 들어오면, 쓰레드가 1개뿐이므로 대기
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/f35cfeb9-d295-4b7a-8430-f77f6927dbca/Untitled.png)
+
 
 - 지연이 길어지면 1번에 대한 연결과 2번 요청에 대한 연결 모두 죽어버림
     - 2번 요청에 대한 수행 자체가 불가
 
 ## 요청마다 쓰레드 생성
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/274450bb-2f90-40ed-a3b5-955e5cb0d4e7/Untitled.png)
 
 - 쓰레드를 하나 더 생성하고 동일한 서블릿을 호출해 2번 요청을 처리
     - 다른 쓰레드는 지연 중인 쓰레드와 별개로 코드를 실행한 뒤 응답을 수행
@@ -238,13 +206,12 @@ public class HelloServlet extends HttpServlet {
 
 ## 쓰레드 풀
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/c8934ad1-f06e-4e33-b729-eb9ed079d431/Untitled.png)
 
 - 쓰레드가 필요할 때마다 쓰레드 풀에 요청하여, 이미 생성되어 있는 쓰레드를 받아 사용
 - 쓰레드 사용을 종료하면 쓰레드 풀에 사용한 쓰레드를 반납
     - 쓰레드 종료가 아님
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/655517d1-7bf3-4484-bf0f-5df1252a94b1/Untitled.png)
+
 
 - 최대 쓰레드가 모두 사용 중이라 쓰레드 풀에 쓰레드가 없다면, 요청을 거절하거나 특정 숫자만큼 대기하도록 설정할 수 있음
 
@@ -270,7 +237,7 @@ public class HelloServlet extends HttpServlet {
 - 이 값을 너무 낮게 설정하면?
     - 동시 요청이 많으면, 서버 리소스는 여유롭지만, 클라이언트는 금방 응답 지연
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/fee20204-e4d4-401e-815a-cee355c6f2f3/Untitled.png)
+
     
     - 최대 쓰레드 수를 10으로 설정한다면, 동시에 100개의 요청이 오는 경우 10개 요청만 처리하고 90개 요청은 대기 or 거절
     - 10개의 요청 처리 시, CPU의 5%만 사용한다면 매우 비효율
@@ -300,27 +267,21 @@ public class HelloServlet extends HttpServlet {
 
 ## 정적 리소스
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/0a92c1e6-af0b-4418-ad28-3255c44eab4e/Untitled.png)
+
 
 - 고정된 HTML 파일, CSS, JS, 이미지, 영상 등을 제공
 - 주로 웹 브라우저
 
 ## HTML 페이지
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/49430e48-60be-4114-9f09-d8bc6137688c/Untitled.png)
-
 - 동적으로 필요한 HTML 파일을 생성해서 전달
 - 웹 브라우저: HTML 해석
 
 ## HTTP API
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/35f391f2-a21d-46da-8948-86e021755652/Untitled.png)
-
 - HTML이 아니라 데이터를 전달
 - 주로 JSON 형식 사용
 - 다양한 시스템에서 호출
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f1b4218a-e3b3-4354-935e-87ebfb47259e/fbad3bd2-e91d-403d-9804-64a595c24eb3/Untitled.png)
 
 - 주로 JSON 형태로 데이터 통신
 - 앱 클라이언트
