@@ -7,6 +7,7 @@ bream_weight = [242.0, 290.0, 340.0, 363.0, 430.0, 450.0, 500.0, 390.0, 450.0, 5
                 700.0, 725.0, 720.0, 714.0, 850.0, 1000.0, 920.0, 955.0, 925.0, 975.0, 950.0]
 
 import matplotlib.pyplot as plt
+
 plt.scatter(bream_length, bream_weight)
 plt.xlabel('length') # x축은 길이
 plt.ylabel('weight') # y축은 무게
